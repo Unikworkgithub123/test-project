@@ -16,7 +16,7 @@ app.use(upload.any());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.set('trust proxy', 1);
 
 // Rate limiting configuration (5 requests per minute)
 const limiter = rateLimit({
